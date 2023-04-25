@@ -1,0 +1,3 @@
+//! - Refactorizar la ruta para list = list/:id ---> list?_page=1
+//! - Refactorizar card_list.pug = Card debe ser un link hacia el caracter
+//! - Refactorizar: Listar array de caracteres en routerList.js --> Generar un map con clave de Id

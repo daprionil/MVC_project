@@ -1,0 +1,6 @@
+include ./card_banner_list.pug
+
+mixin banner_list_page(listRandomCharacters)
+    div(class="flex rounded-md overflow-hidden shadow-lg h-full")
+        each ch in listRandomCharacters
+            +cardBanner(ch)

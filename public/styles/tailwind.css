@@ -1,7 +1,51 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins&display=swap');
+
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
 
+
 *{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
     font-family: 'Poppins', sans-serif;
+}
+
+@layer base{
+    button{
+        @apply p-2 rounded-md font-bold bg-white transition-all hover:shadow-back-translate-black
+    }
+}
+
+@layer utilities{
+    .clip-reset{
+        clip-path: polygon(0 0, 100% 0, 100% 100%, 0% 100%,  0% 100%, 0 100%);
+    }
+    .path_card{
+        clip-path: polygon(0 0, 45% 0, 100% 11%, 100% 100%, 59% 100%, 0 88%);
+    }
+    .shadow-back-translate-black{
+        box-shadow: 0 1px 0 black;
+    }
+    .bg-img-back-1{
+        background: linear-gradient(#00000062, #00000062), url('../home_images_sections/background_1.jpg');
+        background-size: cover;
+    }
+    .bg-img-back-1:hover{
+        background: linear-gradient(#00000079, #00000079), url('../home_images_sections/background_1.jpg');
+        background-size: cover;
+    }
+    .bg-img-back-2{
+        background: linear-gradient(#00000062, #00000062), url('../home_images_sections/background_2.webp');
+        background-size: cover;
+    }
+    .bg-img-back-2:hover{
+        background: linear-gradient(#00000079, #00000079), url('../home_images_sections/background_2.webp');
+        background-size: cover;
+    }
+    .bg-img-back-3{
+        background: linear-gradient(#00000062, #00000062), url('../home_images_sections/background_3.jpg');
+        background-size: cover;
+    }
 }
