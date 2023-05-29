@@ -1,5 +1,6 @@
 mixin card_list(character)
-    div(class=" rounded-md overflow-hidden drop-shadow-lg group relative")
-        img(class="path_card w-full blur-[3px] contrast-75 group-hover:blur-0 grayscale-[.5] aspect-square group-hover:grayscale-0 group-hover:contrast-100 group-hover:scale-105 transition-all duration-500 ease group-hover:clip-reset" ,src=`${character.thumbnail.path}.${character.thumbnail.extension}`, alt="")
-        div(class=" absolute top-0 left-0 w-full h-full text-center flex items-center justify-center")
-            p(class="text-5xl p-3 lg:text-3xl drop-shadow-md text-white font-bold")=character.name
+    a(href=`/list/${character.id}`)
+        div(class=" rounded-md overflow-hidden drop-shadow-lg group relative")
+            img(class="path_card w-full blur-[3px] contrast-75 group-hover:blur-0 grayscale-[.5] aspect-square group-hover:grayscale-0 group-hover:contrast-100 group-hover:scale-105 transition-all duration-500 ease group-hover:clip-reset" ,src=`${character.thumbnail.path}.${character.thumbnail.extension}`, alt="")
+            div(class=" absolute top-0 left-0 w-full h-full text-center flex items-center justify-center")
+                p(class="text-5xl p-3 lg:text-3xl drop-shadow-md text-white font-bold")=character.name 

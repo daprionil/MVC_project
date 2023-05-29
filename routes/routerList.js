@@ -1,9 +1,11 @@
 const express = require('express');
-const { getPageList } = require('../controllers/listController');
+const { getPageList, getPageOnlyCharacter } = require('../controllers/listController');
 
 const routerList = express.Router();
 
-routerList.get("/:id", getPageList);
-routerList.use(express.static("public"));
+routerList.get("/", getPageList);
+
+routerList.use(express.static('public'));
+routerList.get('/:character_id', getPageOnlyCharacter)
 
 module.exports = routerList;

@@ -18,7 +18,16 @@
     }
 }
 
+@layer components{
+    .card-only-view{
+        @apply before:bg-clip-only-card before:transition-all before:duration-500 hover:before:bg-opacity-70 hover:before:translate-y-3 before:content-[''] before:absolute relative before:bg-white hover:before:bg-gray-900 before:w-full before:h-full before:z-10 before:shadow-[inset_-2px_-2px_100px_rgba(0,0,0,.5)];
+    }
+}
+
 @layer utilities{
+    .bg-clip-only-card{
+        clip-path: polygon(100% 21%, 0% 100%, 100% 100%);
+    }
     .clip-reset{
         clip-path: polygon(0 0, 100% 0, 100% 100%, 0% 100%,  0% 100%, 0 100%);
     }

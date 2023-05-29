@@ -1,0 +1,21 @@
+include ./templates/head
+block allContent
+    div(class="p-4 mb-20 mt-2 max-w-3xl rounded-sm w-full md:grid  items-center mx-auto")
+        div(class=" p-4 flex flex-col gap-4")
+            p(class="text-2xl font-bold")=name
+            p(class="text-lg")=description
+            div(class="grid grid-cols-3 md:flex md:flex-wrap gap-4")
+                a(href="",class=" p-2 rounded bg-blue-400 transform hover:scale-105 text-center text-white font-bold hover:shadow",rel="noopener noreferrer")=`Comics `
+                    span(class="font-light bg-stone-800 bg-opacity-60 rounded-l-full p-2 aspect-square")=comics.available
+
+                a(href="",class=" p-2 rounded bg-blue-400 transform hover:scale-105 text-center text-white font-bold hover:shadow",rel="noopener noreferrer")=`Series `
+                    span(class="font-light bg-stone-800 bg-opacity-60 rounded-l-full p-2 aspect-square")=series.available
+
+                a(href="",class=" p-2 rounded bg-blue-400 transform hover:scale-105 text-center text-white font-bold hover:shadow",rel="noopener noreferrer")=`Historietas `
+                    span(class="font-light bg-stone-800 bg-opacity-60 rounded-l-full p-2 aspect-square")=stories.available
+
+        div(class="card-only-view group overflow-hidden drop-shadow-md")
+            img(class="rounded-sm max-h-[600px] h-full group-hover:-translate-y-2 shadow hover:shadow-xl transition-all ease-in transform aspect-video md:aspect-[0.5] object-cover w-full" ,src=`${thumbnail.path}.${thumbnail.extension}`, alt=name)
+        div(class="flex pt-4 justify-center col-span-2 ")
+            each url in urls
+                a(href=url.url,rel="noopener noreferrer", target="_blank", class="btn shadow-xl px-4 rounded-sm py-2 bg-red-400 mx-2 duration-300 transition-all font-bold hover:bg-red-100")=url.type

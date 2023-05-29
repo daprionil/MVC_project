@@ -2,16 +2,22 @@ extends ./templates/head.pug
 include ./components/banner_list_page.pug
 include ./components/card_list.pug
 
-append allContent
-    section(class="w-full mx-auto relative")
-        article(class="bg-opacity-75 h-[70vh] bg-img-back-3")
-            +banner_list_page(listRandomCharacters)
-    section(class=" mb-24")
-        article(class=" max-w-[1000px] mx-auto")
-            div(class="text-center text-6xl font-bold p-4")
-                p(class='bg-clip-text text-transparent bg-gradient-to-r from-red-700 to-violet-500') Campeones
-        article(class="max-w-[1000px] mx-auto p-2")
-            div(class="grid grid-cols-1 md:grid-cols-2 items-center lg:grid-cols-3 gap-3")
-                each character in pagesCharacters[0]
-                    +card_list(character)
+block allContent
+    div(class=" mb-24")
+        - 
+            const idTitle = '#title_page'
+
+        section(class="w-full mx-auto relative")
+            article(class="bg-opacity-75 h-[70vh] bg-center bg-img-back-3")
+                +banner_list_page(listRandomCharacters)
+        section
+            article(class=" max-w-[1000px] mx-auto")
+                div(ìd=idTitle ,class="text-center text-6xl font-bold p-4")
+                    p(class='bg-clip-text text-transparent bg-gradient-to-r from-red-700 to-violet-500') Campeones
+            article(class="max-w-[1000px] mx-auto p-2")
+                div(class="grid grid-cols-1 sm:grid-cols-2 items-center lg:grid-cols-3 gap-3")
+                    each character in charactersPage
+                        +card_list(character)
+        section
+            include ./components/paginatorPages.pug
                 
