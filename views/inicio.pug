@@ -1,21 +1,21 @@
 include ./templates/head
 append allContent
     section(class=" grid grid-cols-2 items-stretch overflow-hidden bg-red-700 min-h-[90vh] text-white font-bold justify-center")
-        div(class="bg-img-back-3 col-span-2 flex items-center transition-all")
-            p(class=" text-center text-6xl lg:text-8xl m-auto") Bienvenidos
-        article(class="flex flex-col items-center text-center p-4 justify-center bg-img-back-1 transition-all hover:scale-105")
-            p(class=" drop-shadow-lg text-xl md:text-3xl") Revisa la Lista de Campeones 
-            blockquote(class="drop-shadow-lg font-thin text-lg md:text-xl") actualiza, administra, Lorem ipsum dolor sit amet.
-        article(class=" bg-img-back-2 hover:scale-105 bg-opacity-10 transition-all ease-out text-center p-4 flex items-center justify-center")
-            a(href="/list/1")
-                button(class="px-4 transition-all ease-in-out hover:scale-105 py-2 rounded-xl text-black bg-white text-xl") Ir a la Lista 
+        div(class="flex items-center col-span-2 transition-all bg-img-back-3")
+            p(class="m-auto text-6xl text-center lg:text-8xl") Bienvenidos
+        article(class="flex flex-col items-center justify-center p-4 text-center transition-all bg-img-back-1 hover:scale-105")
+            p(class="text-xl drop-shadow-lg md:text-3xl") Revisa la Lista de Campeones 
+            blockquote(class="text-lg font-thin drop-shadow-lg md:text-xl") actualiza, administra, Lorem ipsum dolor sit amet.
+        article(class="flex items-center justify-center p-4 text-center transition-all ease-out bg-img-back-2 hover:scale-105 bg-opacity-10")
+            a(href="/list")
+                button(class="px-4 py-2 text-xl text-black transition-all ease-in-out bg-white hover:scale-105 rounded-xl") Ir a la Lista 
     section(class=" min-h-[90vh] flex items-center relative bg-gradient-to-r md:px-8 from-stone-300 to-cyan-300 overflow-hidden py-11")
         img(class="absolute left-[-120px] bottom-0 max-w-sm md:max-w-lg xl:max-w-xl opacity-60", src="home_images_sections/black_adam.png", alt="panther_adam_banner")
         img(class="absolute right-[-120px] bottom-[0] max-w-sm md:max-w-lg xl:max-w-xl opacity-60" ,src="home_images_sections/black_panther.png", alt="panther_black")
-        div(class=" z-10 grid grid-cols-1 lg:grid-cols-2 text-center justify-center mx-auto w-full max-w-5xl gap-8 items-center")
-            p(class=" text-4xl drop-shadow-md text-white font-bold xl:text-5xl") Disfruta Analizando tus personajes Favoritos
-            div(class="bg-white bg-opacity-60 p-4 max-w-lg rounded-lg mx-auto shadow-lg flex flex-wrap justify-center gap-3")
-                p(class="text-lg xl:text-2xl border-b-2 pb-5 border-b-gray-300") Los Campeones es un grupo de superhéroes de la editorial Marvel Comics. Con la Viuda Negra, su lider que se Enfrentan a el Hombre Titanio
+        div(class="z-10 grid items-center justify-center w-full max-w-5xl grid-cols-1 gap-8 mx-auto text-center lg:grid-cols-2")
+            p(class="text-4xl font-bold text-white drop-shadow-md xl:text-5xl") Disfruta Analizando tus personajes Favoritos
+            div(class="flex flex-wrap justify-center max-w-lg gap-3 p-4 mx-auto bg-white rounded-lg shadow-lg bg-opacity-60")
+                p(class="pb-5 text-lg border-b-2 xl:text-2xl border-b-gray-300") Los Campeones es un grupo de superhéroes de la editorial Marvel Comics. Con la Viuda Negra, su lider que se Enfrentan a el Hombre Titanio
                 p(class="text-xl") Conoce más en la
                     a(href="https://marvel.fandom.com/es/wiki/Champions_Vol_2_19", target="_blank", rel="noopener noreferrer")
-                        button(class="mx-3 bg-orange-400 text-white shadow-lg") Página Oficial
+                        button(class="mx-3 text-white bg-orange-400 shadow-lg") Página Oficial

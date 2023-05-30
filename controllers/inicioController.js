@@ -1,5 +1,4 @@
 const getPageInicio = (req,res) => {
-
     res.render('inicio');
 };
 

@@ -1,0 +1,16 @@
+include ./templates/head
+append allContent
+    main(class="flex h-[80vh] items-center justify-center py-6")
+        div(class="w-full max-w-md p-4 rounded bg-stone-200")
+            p(class="py-2 text-2xl font-bold text-center drop-shadow-sm") Iniciar Sesion
+            form(class="flex flex-col w-full gap-2", id="form_log_in", method="POST", action="#")
+                input(class="px-3 py-1 rounded",type="text", placeholder="Correo Electrónico", name='email')
+                input(class="px-3 py-1 rounded",type="password", placeholder="Contraseña",name='password')
+                div(id="box_errors", class="flex flex-col gap-2")
+                
+                button(class="px-3 py-1 font-semibold text-white bg-blue-600 rounded", type="submit") Aceptar
+            p(class="py-2 text-sm text-center") ¿ No tienes una cuenta ? 
+                a(class="hover:underline", href="/crear-sesion") Crear cuenta
+
+script(type="module")
+    include ../utils/iniciarSesion.js

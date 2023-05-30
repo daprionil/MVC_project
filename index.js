@@ -1,11 +1,14 @@
 const fs = require('fs');
 
 const express = require('express');
-const dotenv = require('dotenv/config');
+require('dotenv/config');
 const router = require('./routes/router');
+const bodyParser = require('body-parser');
+
+const port = process.env.PORT || 3001;
+const host = process.env.HOST || 'localhost';
 
 const app = express();
-const port = process.env.PORT || 3001;
 
 //Adecuations Level 1
 let charactersList = []
@@ -35,6 +38,9 @@ fs.readFile('db.json', (err, data) => {
     firstElements = characters.slice(0, 3);
 });
 
+app.use(express.json());
+app.use(bodyParser());
+
 //Middleware
 app.use(async (req,res,next) => {
 
@@ -51,16 +57,18 @@ app.use(async (req,res,next) => {
     next();
 });
 
+
 //Router Init
 app.use('/', router);
 
 //Add Directory to root directory
 app.use(express.static("public"));
 
+
 //Set Template Engine
 app.set("view engine", "pug");
 
 //Configuration server express
-app.listen(port, 'localhost', () => {
+app.listen(port, host, () => {
     console.log('servidor Corriendo en el puerto: ' + port);
 });

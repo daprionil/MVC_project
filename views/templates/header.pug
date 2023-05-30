@@ -1,12 +1,23 @@
-header(class="p-4 sticky z-50 top-0 items-center bg-gray-300 grid grid-cols-2 text-center")
-    section(class=" w-fit")
+header(class="sticky top-0 z-50 flex items-center justify-between w-full p-4 text-center bg-gray-300 flex-nowrap")
+    section(class="w-fit")
         a(href="/")
             img( class="w-16", src="https://cdn.logo.com/hotlink-ok/logo-social-sq.png")
-    section
-        ul(class=" flex font-bold items-center justify-end gap-4 ")
+    section(class="justify-self-end sm:hidden", id="display_modal")
+        button(id="show_modal_btn") Menú
+    section(class="fixed top-0 left-0 items-center justify-center hidden w-full h-full bg-white sm:w-auto sm:bg-transparent sm:block sm:static", id="menu_modal")
+        ul(class="items-center gap-4 font-bold justify-self-end sm:flex")
             li(class="text-xl hover:underline")
                 a(href="/") Inicio
             li(class="text-xl hover:underline") 
                 a(href="/list") Lista
             li(class="text-xl hover:underline") 
                 a(href="/opinions") Opiniones
+            
+            if !sesion
+                li(class="p-2 text-sm text-white transition duration-300 transform bg-red-600 rounded-md whitespace-nowrap hover:shadow-xl hover:scale-105 hover:underline")
+                        a(href="/iniciar-sesion") Iniciar Sesion
+        button(class="absolute font-bold text-white hover:scale-105 transform transition-all duration-300 top-[2%] right-[5%] aspect-square w-15 h-10 bg-red-700 sm:hidden", id="close_modal_btn")
+            img(src="/close.svg", alt="close_modal")
+//- Add Script to validate sesion
+script
+    include ../../utils/headerModal.js
